@@ -1,136 +1,58 @@
 {
-    "name": "laravel/framework",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "monolog/monolog",
+    "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+    "keywords": ["log", "logging", "psr-3"],
+    "homepage": "http://github.com/Seldaek/monolog",
+    "type": "library",
     "license": "MIT",
-    "homepage": "https://laravel.com",
-    "support": {
-        "issues": "https://github.com/laravel/framework/issues",
-        "source": "https://github.com/laravel/framework"
-    },
     "authors": [
         {
-            "name": "Taylor Otwell",
-            "email": "taylor@laravel.com"
+            "name": "Jordi Boggiano",
+            "email": "j.boggiano@seld.be",
+            "homepage": "http://seld.be"
         }
     ],
     "require": {
-        "php": "^7.1.3",
-        "ext-mbstring": "*",
-        "ext-openssl": "*",
-        "doctrine/inflector": "~1.1",
-        "dragonmantank/cron-expression": "~2.0",
-        "erusev/parsedown": "~1.7",
-        "league/flysystem": "^1.0.8",
-        "monolog/monolog": "~1.12",
-        "nesbot/carbon": "1.26.*",
-        "psr/container": "~1.0",
-        "psr/simple-cache": "^1.0",
-        "ramsey/uuid": "^3.7",
-        "swiftmailer/swiftmailer": "~6.0",
-        "symfony/console": "~4.0",
-        "symfony/debug": "~4.0",
-        "symfony/finder": "~4.0",
-        "symfony/http-foundation": "~4.0",
-        "symfony/http-kernel": "~4.0",
-        "symfony/process": "~4.0",
-        "symfony/routing": "~4.0",
-        "symfony/var-dumper": "~4.0",
-        "tijsverkoyen/css-to-inline-styles": "^2.2.1",
-        "vlucas/phpdotenv": "~2.2"
-    },
-    "replace": {
-        "illuminate/auth": "self.version",
-        "illuminate/broadcasting": "self.version",
-        "illuminate/bus": "self.version",
-        "illuminate/cache": "self.version",
-        "illuminate/config": "self.version",
-        "illuminate/console": "self.version",
-        "illuminate/container": "self.version",
-        "illuminate/contracts": "self.version",
-        "illuminate/cookie": "self.version",
-        "illuminate/database": "self.version",
-        "illuminate/encryption": "self.version",
-        "illuminate/events": "self.version",
-        "illuminate/filesystem": "self.version",
-        "illuminate/hashing": "self.version",
-        "illuminate/http": "self.version",
-        "illuminate/log": "self.version",
-        "illuminate/mail": "self.version",
-        "illuminate/notifications": "self.version",
-        "illuminate/pagination": "self.version",
-        "illuminate/pipeline": "self.version",
-        "illuminate/queue": "self.version",
-        "illuminate/redis": "self.version",
-        "illuminate/routing": "self.version",
-        "illuminate/session": "self.version",
-        "illuminate/support": "self.version",
-        "illuminate/translation": "self.version",
-        "illuminate/validation": "self.version",
-        "illuminate/view": "self.version"
-    },
-    "conflict": {
-        "tightenco/collect": "<5.5.33"
+        "php": ">=5.3.0",
+        "psr/log": "~1.0"
     },
     "require-dev": {
-        "aws/aws-sdk-php": "~3.0",
-        "doctrine/dbal": "~2.6",
-        "filp/whoops": "^2.1.4",
-        "league/flysystem-cached-adapter": "~1.0",
-        "mockery/mockery": "~1.0",
-        "moontoast/math": "^1.1",
-        "orchestra/testbench-core": "3.6.*",
-        "pda/pheanstalk": "~3.0",
-        "phpunit/phpunit": "~7.0",
-        "predis/predis": "^1.1.1",
-        "symfony/css-selector": "~4.0",
-        "symfony/dom-crawler": "~4.0"
-    },
-    "autoload": {
-        "files": [
-            "src/Illuminate/Foundation/helpers.php",
-            "src/Illuminate/Support/helpers.php"
-        ],
-        "psr-4": {
-            "Illuminate\\": "src/Illuminate/"
-        }
-    },
-    "autoload-dev": {
-        "files": [
-            "tests/Database/stubs/MigrationCreatorFakeMigration.php"
-        ],
-        "psr-4": {
-            "Illuminate\\Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "5.6-dev"
-        }
+        "phpunit/phpunit": "~4.5",
+        "graylog2/gelf-php": "~1.0",
+        "sentry/sentry": "^0.13",
+        "ruflin/elastica": ">=0.90 <3.0",
+        "doctrine/couchdb": "~1.0@dev",
+        "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+        "php-amqplib/php-amqplib": "~2.4",
+        "swiftmailer/swiftmailer": "^5.3|^6.0",
+        "php-console/php-console": "^3.1.3",
+        "phpstan/phpstan": "^0.12.59"
     },
     "suggest": {
-        "ext-pcntl": "Required to use all features of the queue worker.",
-        "ext-posix": "Required to use all features of the queue worker.",
-        "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
-        "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.6).",
-        "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-        "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
-        "laravel/tinker": "Required to use the tinker console command (~1.0).",
-        "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
-        "league/flysystem-cached-adapter": "Required to use the Flysystem cache (~1.0).",
-        "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
-        "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (~1.0).",
-        "nexmo/client": "Required to use the Nexmo transport (~1.0).",
-        "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
-        "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
-        "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~3.0).",
-        "symfony/css-selector": "Required to use some of the crawler integration testing tools (~4.0).",
-        "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~4.0).",
-        "symfony/psr-http-message-bridge": "Required to psr7 bridging features (~1.0)."
+        "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+        "sentry/sentry": "Allow sending log messages to a Sentry server",
+        "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+        "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+        "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+        "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+        "ext-mongo": "Allow sending log messages to a MongoDB server",
+        "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+        "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+        "rollbar/rollbar": "Allow sending log messages to Rollbar",
+        "php-console/php-console": "Allow sending log messages to Google Chrome"
     },
-    "config": {
-        "sort-packages": true
+    "autoload": {
+        "psr-4": {"Monolog\\": "src/Monolog"}
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "autoload-dev": {
+        "psr-4": {"Monolog\\": "tests/Monolog"}
+    },
+    "provide": {
+        "psr/log-implementation": "1.0.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "phpstan": "vendor/bin/phpstan analyse"
+    },
+    "lock": false
 }
